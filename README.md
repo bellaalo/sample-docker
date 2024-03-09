@@ -36,18 +36,10 @@
     sudo chmod 777 /var/run/docker.sock
     ```
     
-- Build and run your application using Docker containers:
-    
-    ```bash
-    docker build -t netflix .
-    docker run -d --name netflix -p 8081:80 netflix:latest
-    
-    #to delete
-    docker stop <containerid>
-    docker rmi -f netflix
+
     ```
 
-It will show an error cause you need API key
+we need to get the API Key from the movie database if not It will show an error cause you need API key
 
 **Step 4: Get the API Key:**
 
@@ -59,10 +51,42 @@ It will show an error cause you need API key
 - Provide the required basic details and click "Submit."
 - You will receive your TMDB API key.
 
-Now recreate the Docker image with your api key:
+-- Build and run your application using Docker containers:
+Now recreate the Docker image with your api key: NB: replace <your-api-key> with your key from the movie database
+
+```bask
+docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .   
 ```
-docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
+
+```bash
+    docker run -d --name netflix -p 8081:80 netflix:latest
 ```
+
+Access Netflix website  in a web browser using the public IP of your EC2 instance.
+
+```bash
+http://<you EC2 publicIp>:8081
+```
+
+
+    #to delete the docker image run the command:
+
+    To see the images and containerid
+
+    ```
+    docker ps 
+    ```
+Run this command to stop the containerid 
+```
+    docker stop <containerid>
+```
+
+Run this command to delete the containerid
+
+```
+    docker rm -f <containerid>
+```
+
 
 **Phase 2: Security**
 
