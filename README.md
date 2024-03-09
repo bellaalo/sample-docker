@@ -28,17 +28,12 @@
 - Set up Docker on the EC2 instance:
     
     ```bash
-    
     sudo apt-get update
     sudo apt-get install docker.io -y
     sudo usermod -aG docker $USER  # Replace with your system's username, e.g., 'ubuntu'
     newgrp docker
     sudo chmod 777 /var/run/docker.sock
     ```
-    
-
-    ```
-
 we need to get the API Key from the movie database if not It will show an error cause you need API key
 
 **Step 4: Get the API Key:**
@@ -59,7 +54,7 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 ```
 
 ```bash
-    docker run -d --name netflix -p 8081:80 netflix:latest
+docker run -d --name netflix -p 8081:80 netflix:latest
 ```
 
 Access Netflix website  in a web browser using the public IP of your EC2 instance.
@@ -73,18 +68,18 @@ http://<you EC2 publicIp>:8081
 
     To see the images and containerid
 
-    ```
-    docker ps 
-    ```
+```bash
+docker ps 
+```
 Run this command to stop the containerid 
 ```
-    docker stop <containerid>
+docker stop <containerid>
 ```
 
 Run this command to delete the containerid
 
 ```
-    docker rm -f <containerid>
+docker rm -f <containerid>
 ```
 
 
