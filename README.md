@@ -63,10 +63,9 @@ Access Netflix website  in a web browser using the public IP of your EC2 instanc
 http://<you EC2 publicIp>:8081
 ```
 
+To delete the docker image run the command:
 
-    #to delete the docker image run the command:
-
-    To see the images and containerid
+To see the images and containerid
 
 ```bash
 docker ps 
