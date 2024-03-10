@@ -158,27 +158,21 @@ Install below plugins
 
 3 NodeJs Plugin (Install Without restart)
 
-4 Eclipse Temurin install
+4 Sonar Quality Gates
 
-5 SonarQube Scanner
+5 Quality Gates
 
-6 Sone Quality Gates
+6 Docker
 
-7 Quality Gates
+7 Docker Commons
 
-8 Nodejs
+8 Docker pipeline
 
-9 Docker
+9 Docker API
 
-10 Docker Commons
+10 Docker-build-step
 
-11 Docker pipeline
-
-12 Docker API
-
-13 Docker-build-step
-
-16 Email Extension Plugin
+11 Email Extension Plugin
 
 ### **Configure Java and Nodejs in Global Tool Configuration**
 
