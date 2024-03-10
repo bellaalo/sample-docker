@@ -60,7 +60,7 @@ docker run -d --name netflix -p 8081:80 netflix:latest
 Access Netflix website  in a web browser using the public IP of your EC2 instance.
 
 ```bash
-http://<you EC2 publicIp>:8081
+http://<your EC2 publicIp>:8081
 ```
 
 To delete the docker image run the command:
@@ -82,7 +82,7 @@ docker rm -f <containerid>
 ```
 
 
-**Phase 2: Security**
+**Phase 2: Security** (Do not repeat this Phase 2 all, this is continuation for Lab 1 )
 
 1. **Install SonarQube and Trivy:**
     - Install SonarQube and Trivy on the EC2 instance to scan for vulnerabilities.
@@ -106,7 +106,7 @@ docker rm -f <containerid>
         sudo apt-get install trivy        
         ```
         
-        to scan image using trivy
+        To scan image using trivy (Check documentation for more infor https://aquasecurity.github.io/trivy/v0.22.0/)
         ```
         trivy image <imageid>
         ```
@@ -158,7 +158,27 @@ Install below plugins
 
 3 NodeJs Plugin (Install Without restart)
 
-4 Email Extension Plugin
+4 Eclipse Temurin install
+
+5 SonarQube Scanner
+
+6 Sone Quality Gates
+
+7 Quality Gates
+
+8 Nodejs
+
+9 Docker
+
+10 Docker Commons
+
+11 Docker pipeline
+
+12 Docker API
+
+13 Docker-build-step
+
+16 Email Extension Plugin
 
 ### **Configure Java and Nodejs in Global Tool Configuration**
 
@@ -294,7 +314,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+                git branch: 'main', url: ' https://github.com/bellaalo/sample-docker.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -677,7 +697,7 @@ That's it! You've successfully installed and set up Grafana to work with Prometh
     - Integrate Jenkins with Prometheus to monitor the CI/CD pipeline.
 
 
-**Phase 5: Notification**
+**Phase 5: Notification** (optional)
 
 1. **Implement Notification Services:**
     - Set up email notifications in Jenkins or other notification mechanisms.
