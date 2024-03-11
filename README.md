@@ -289,6 +289,8 @@ Certainly, here are the instructions without step numbers:
 
 Now, you have installed the Dependency-Check plugin, configured the tool, and added Docker-related plugins along with your DockerHub credentials in Jenkins. You can now proceed with configuring your Jenkins pipeline to include these tools and credentials in your CI/CD process.
 
+NB : on the Docker Build & Push Satge please add your API key.
+
 ```groovy
 
 pipeline{
@@ -366,13 +368,16 @@ pipeline{
     }
 }
 
+```
+
 
 If you get docker login failed errorr
 
+
+```
 sudo su
 sudo usermod -aG docker jenkins
 sudo systemctl restart jenkins
-
 
 ```
 
